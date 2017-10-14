@@ -1,5 +1,6 @@
 import xml2js from 'xml2js'
 import template from './tpl'
+import sha1 from 'sha1'
 
 function parseXML(xml) {
 	return new Promise((resolve, reject) => {
@@ -64,8 +65,54 @@ function tpl (content, message) {
 
 }
 
+// 随机字符串
+function createNonce() {
+	return Math.random().toString(36).substr(2,15)
+}
+
+// 时间戳
+function createTimestamp() {
+	return parseInt(new Date().getTime() / 1000, 0) + ''
+}
+
+//https://mp.weixin.qq.com/wiki?t=resource/res_main&id=mp1421141115 附录1
+function raw(args) {
+	let keys = Object.keys(args) // 取出对象中的key
+	let newArgs = {}
+	let str = ''
+	keys = keys.sort()
+	keys.forEach(key => {
+		newArgs[key.toLowerCase()] = args[key]
+	})
+
+	for(let k in newArgs) {
+		str += '&' + k + '=' + newArgs[k]
+	}
+
+	return str.substr(1)
+}
+
+function signIt(nonce, ticket, timestamp, url) {
+	const ret = {
+		jsapi_ticket: ticket,
+		noncestr: nonce,
+		timestamp: timestamp,
+		url: url
+	}
+
+	const string = raw(ret)
+	const sha = sha1(string)
+}
+
 function sign(ticket, url) {
-	
+	const nonce = createNonce()
+	const timestamp = createTimestamp()
+	const signature = signIt(nonce, ticket, timestamp, url)
+	return {
+		noncestr: nonce,
+		timestamp: timestamp,
+		signature: signature
+	}
 }
 
 export {
