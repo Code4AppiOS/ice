@@ -17,7 +17,6 @@ function formatMessage(result) {
 		const keys = Object.keys(result)
 		for(let i = 0; i < keys.length; i++){
 			let item = result[keys[i]]
-			console.log(item)
 			let key = keys[i]
 			if(!(item instanceof Array) || item.length === 0) {
 				continue
@@ -102,6 +101,7 @@ function signIt(nonce, ticket, timestamp, url) {
 
 	const string = raw(ret)
 	const sha = sha1(string)
+	return sha
 }
 
 function sign(ticket, url) {
