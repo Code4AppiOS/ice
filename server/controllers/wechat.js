@@ -20,7 +20,7 @@ export async function signature(ctx, next){
 
 export async function redirect(ctx, next) {
 	const target = config.SITE_ROOT_URL + '/oauth'
-	const scope = 'snsapi_userinfo'
+	const scope = 'snsapi_base'
 	const a =  '1'
 	const params = `${a}`
 
