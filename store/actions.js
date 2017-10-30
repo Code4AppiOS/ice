@@ -25,5 +25,12 @@ export default {
 		const res = await Services.fetchCities()
 		state.cities = res.data
 		return res
+	},
+
+
+	async fetchProducts({state}) {
+		const res = await Services.fetchProducts()
+		state.products = res.data
+		return res
 	}
 }

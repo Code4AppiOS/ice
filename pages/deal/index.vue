@@ -1,7 +1,7 @@
 <template lang="pug">
   .container
     .shopping
-      .title 荣耀周边
+      .title 
       .list
         .items(v-for='item in products' @click='showProduct(item)')
           .body

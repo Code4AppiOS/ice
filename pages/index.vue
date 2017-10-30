@@ -95,7 +95,7 @@
       }
     },
     beforeCreate() {
-      this.$store.dispatch('fetchHouses')
+      // this.$store.dispatch('fetchHouses')
       this.$store.dispatch('fetchCharacters')
       this.$store.dispatch('fetchCities')
     }

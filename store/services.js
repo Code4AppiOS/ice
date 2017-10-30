@@ -23,6 +23,10 @@ class Services {
 	fetchCharacters() {
 		return axios.get(`${apiURL}/cities`)
 	}
+	
+	fetchProducts() {
+		return axios.get(`${apiURL}/products`)
+	}
 }
 
 export default new Services()

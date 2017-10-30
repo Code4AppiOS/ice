@@ -1,9 +1,9 @@
 <template lang="pug">
   .container
     .shopping
-      .title 荣耀周边
+      .title 用戶信息
       .list
-        .items(v-for='item in products' @click='showProduct(item)')
+        .items(v-for='(item, index) in products' :key='index' @click='showProduct(item)')
           .body
             .title {{item.title}}
             .content {{item.content}}
@@ -13,15 +13,10 @@
   import { mapState } from 'vuex'
 
   export default {
-    head() {
-      return {
-        title: '手办商城'
-      }
-    },
-    data() {
-      return {
-        products: ''
-      }
+    computed: {
+      ...mapState([
+        'products',
+        ])
     },
     methods: {
       showProduct(item) {
@@ -34,9 +29,7 @@
       }
     },
     beforeCreate() {
-      this.$store.dispatch('fetchProducts').then(res => {
-        this.products = res.data
-      })
+      this.$store.dispatch('fetchProducts')
     }
   }
 </script>
