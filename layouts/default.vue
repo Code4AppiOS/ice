@@ -1,9 +1,9 @@
-<template>
+<!-- <template>
   <div>
     <nuxt/>
     <v-nav/>
   </div>
-</template>
+</template> -->
 
 <script>
 import vNav from '../components/nav.vue'

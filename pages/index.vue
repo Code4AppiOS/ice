@@ -1,4 +1,4 @@
-<template lang="pug">
+<!-- <template lang="pug">
   .container
     .house(href='house')
       .house-content(v-for='(item, index) in houses' :key='index' @click='showHouse(item)')
@@ -17,7 +17,7 @@
           .title {{item.title}}
           .body {{item.body}}
 </template>
-
+ -->
 <script>
   import { mapState } from 'vuex'
 
@@ -102,7 +102,7 @@
   }
 </script>
 
-<style scoped lang='sass' src='~/static/sass/index.sass'>
+<!-- <style scoped lang='sass' src='~/static/sass/index.sass'>
   
-</style>
+</style> -->
 

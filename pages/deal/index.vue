@@ -40,7 +40,7 @@
     }
   }
 </script>
-
+<!-- 
 <style lang='sass' src="static/sass/shopping.sass"></style>
 
-
+ -->

@@ -1,4 +1,4 @@
-<template lang="pug">
+<!-- <template lang="pug">
 	nav#nav
 		nuxt-link(v-for='(item, index) in navList' :to='item.path' :key='index')
 			div(v-if='index === 0')
@@ -8,7 +8,7 @@
 			div(v-else)
 				img(src='~static/img/user.png')
 </template>
-
+ -->
 <script>
 	export default {
 		data() {
@@ -38,4 +38,4 @@
 	}
 </script>
 
-<style lang='sass' scoped="true" src='static/sass/nav.sass'></style>
+<!-- <style lang='sass' scoped="true" src='static/sass/nav.sass'></style> -->

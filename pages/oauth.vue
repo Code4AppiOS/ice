@@ -1,6 +1,4 @@
-<template lang="pug">
 
-</template>
 <script>
 export default {
   asyncData ({ req }) {
